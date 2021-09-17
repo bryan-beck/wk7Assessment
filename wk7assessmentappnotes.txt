@@ -1,0 +1,14 @@
+extralarge array:insert 1.1630984 s append: 4.7235 ms
+large array: insert: 9.3335ms, append: us
+medium array:insert: 216.2 us append:221.2 us
+small array:insert 59.6 μs append 154.5 μs
+tiny array: insert 45.2 μs append 117.2 μs
+
+
+function doublerinsert is the more scalable function presented 
+
+function doubleinsert utilizes the unshift method which overwrites the original array and adds new items at the beginning of that array.
+
+function doubler append utilizes the push method which adds new items to the end of the array and changes the length of the array and returns the new length.
+
+between the two functions insert is about x2 as fast (when considering the tiny array) as the append function. It appears that the push method is doing a few extra steps taking up time unnecessarily.where the insert function is merely overwriting an array the append function is adding the items and then returning the new length.
